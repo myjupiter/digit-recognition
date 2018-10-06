@@ -6,6 +6,7 @@ from sklearn.externals import joblib
 from skimage.feature import hog
 import numpy as np
 import argparse as ap
+from pprint import pprint
 
 # Get the path of the training set
 parser = ap.ArgumentParser()
@@ -32,7 +33,8 @@ ctrs, hier = cv2.findContours(im_th.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_
 # Get rectangles contains each contour
 rects = [cv2.boundingRect(ctr) for ctr in ctrs]
 
-print rects
+print(rects)
+pprint(rects)
 
 # For each rectangular region, calculate HOG features and predict
 # the digit using Linear SVM.
