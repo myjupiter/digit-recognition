@@ -36,4 +36,4 @@ clf = LinearSVC()
 clf.fit(hog_features, labels)
 
 # Save the classifier
-joblib.dump((clf, pp), "digits_cls.pkl", compress=3)
+joblib.dump((clf, pp), "digits.pkl", compress=3)
