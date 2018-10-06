@@ -9,12 +9,16 @@ from sklearn import preprocessing
 import numpy as np
 from collections import Counter
 
-# Load the dataset
-dataset = datasets.fetch_mldata("MNIST Original")
+from sklearn.datasets import fetch_mldata
 
+mnist = fetch_mldata('MNIST original')
+features = mnist.data.astype('int16')
+labels = mnist.data.astype('int')
+# Load the dataset
+# dataset = datasets.fetch_mldata("MNIST Original")
 # Extract the features and labels
-features = np.array(dataset.data, 'int16') 
-labels = np.array(dataset.target, 'int')
+# features = np.array(dataset.data, 'int16') 
+# labels = np.array(dataset.target, 'int')
 
 # Extract the hog features
 list_hog_fd = []
